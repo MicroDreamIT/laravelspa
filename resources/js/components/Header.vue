@@ -1,5 +1,5 @@
 <template>
     <div>
-        testing
+        {{$store.state.welcome}}
     </div>
 </template>
