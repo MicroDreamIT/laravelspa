@@ -16,6 +16,6 @@
 
 <script>
     export default {
-        name:'main-app'
+        name:'home'
     }
 </script>
