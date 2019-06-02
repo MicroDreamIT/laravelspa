@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/{any}', function () {
     return view('welcome');
-});
-
-Route::resource('news', 'PostController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+})->where();
