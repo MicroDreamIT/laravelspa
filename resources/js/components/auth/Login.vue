@@ -35,6 +35,9 @@
                     password:''
                 }
             }
+        },
+        methods:{
+
         }
     }
 </script>
