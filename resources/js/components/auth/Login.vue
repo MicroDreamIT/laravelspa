@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header">login</div>
                     <div class="card-body">
-                        <form>
+                        <form @submit.prevent="authenticate">
                             <div class="form-group">
                                 <label>email</label>
                                 <input type="text" v-model="form.email">
@@ -37,7 +37,9 @@
             }
         },
         methods:{
+                authenticate(){
 
+                }
         }
     }
 </script>
