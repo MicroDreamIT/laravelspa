@@ -1,5 +1,5 @@
 <template>
     <div>
-        {{$store.state.welcome}}
+        <router-link :to="{name:'login'}">login</router-link>
     </div>
 </template>
