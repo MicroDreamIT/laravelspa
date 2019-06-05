@@ -8,14 +8,14 @@
                         <form @submit.prevent="authenticate">
                             <div class="form-group">
                                 <label>email</label>
-                                <input type="text" v-model="form.email">
+                                <input type="text" v-model="form.email" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>password</label>
-                                <input type="password" v-model="form.password">
+                                <input type="password" v-model="form.password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-default">submit</button>
+                                <button class="btn btn-success">submit</button>
                             </div>
                         </form>
                     </div>
@@ -26,20 +26,30 @@
 </template>
 
 <script>
+    import {login} from '../../helpers/auth'
+
     export default {
         name: "Login",
-        data(){
+        data() {
             return {
-                form:{
-                    email:'',
-                    password:''
+                form: {
+                    email: '',
+                    password: ''
                 }
             }
         },
-        methods:{
-                authenticate(){
-
-                }
+        methods: {
+            authenticate() {
+                this.$store.dispatch('login')
+                login(this.form)
+                    .then(res => {
+                        this.$store.commit('login_success', res)
+                        this.$router.push({name: 'home'})
+                    })
+                    .catch(err => {
+                        this.$store.commit('login_failed', {err})
+                    })
+            }
         }
     }
 </script>

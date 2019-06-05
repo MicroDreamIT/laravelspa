@@ -2,10 +2,6 @@
 
 
 Route::get('/{any}', function () {
-//    \App\User::create([
-//        'name'=>'john',
-//        'email'=>'admin@admin.com',
-//        'password'=>\Illuminate\Support\Facades\Hash::make('123123')
-//    ]);
+//    dd(\Illuminate\Support\Facades\Auth::Guard()->user());
     return view('layouts.app');
 })->where('any','.*');
