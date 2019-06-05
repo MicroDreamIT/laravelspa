@@ -43,11 +43,11 @@
                 this.$store.dispatch('login')
                 login(this.form)
                     .then(res => {
-                        this.$store.commit('login_success', res)
+                        this.$store.commit('loginSuccess', res)
                         this.$router.push({name: 'home'})
                     })
                     .catch(err => {
-                        this.$store.commit('login_failed', {err})
+                        this.$store.commit('loginFailed', {err})
                     })
             }
         }

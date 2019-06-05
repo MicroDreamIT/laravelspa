@@ -10,8 +10,29 @@ export default {
         auth_error:null
     },
     getters:{
+        isLoading(state){
+            return state.loading
+        },
+        isLoggedIn(state){
+            return state.isLoggedIn
+        },
+        currentUser(state){
+            return state.currentUser
+        },
+        authError(state){
+            return state.auth_error
+        },
+
 
     },
-    mutations:{},
+    mutations:{
+        login(state){
+            state.loading = true
+            state.auth_error = null
+        },
+        loginSuccess(state){
+
+        }
+    },
     actions:{}
 }
