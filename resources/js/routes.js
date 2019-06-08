@@ -8,6 +8,11 @@ export const routes = [
         path:'/login',
         name:'login',
         component:require('./components/auth/Login.vue').default
+    },
+    {
+        path:'/dashboard',
+        name:'dashboard',
+        component:require('./view/dashboard.vue').default
     }
 
 ]
