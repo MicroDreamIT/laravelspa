@@ -29,7 +29,7 @@ router.beforeEach((to, from, next)=>{
         next('/dashboard')
     }
     else{
-        next()
+        next('/dashboard')
     }
     next()
 })
