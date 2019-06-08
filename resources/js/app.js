@@ -26,7 +26,7 @@ router.beforeEach((to, from, next)=>{
         next('/login')
     }
     else if (to.path === '/login' && currentUser){
-        next('/dashboard')
+        next('/')
     }
     else{
         next('/dashboard')
