@@ -12,7 +12,10 @@ export const routes = [
     {
         path:'/dashboard',
         name:'dashboard',
-        component:require('./view/dashboard.vue').default
+        component:require('./view/dashboard.vue').default,
+        meta:{
+            requireAuth: true
+        }
     }
 
 ]

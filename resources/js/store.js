@@ -49,5 +49,9 @@ export default {
             state.currentUser = null
         }
     },
-    actions:{}
+    actions:{
+        login(context) {
+            context.commit('login')
+        }
+    }
 }
