@@ -18,9 +18,7 @@ const router  = new VueRouter({
 })
 
 router.beforeEach((to, from, next)=>{
-    const requireAuth = to.matched.some(record=>
-        record.meta.requireAuth
-    )
+    const requireAuth = to.matched.some(record=>record.meta.requireAuth)
     const currentUser = store.state.currentUser
     if(requireAuth && !currentUser){
         next('/login')
@@ -29,9 +27,8 @@ router.beforeEach((to, from, next)=>{
         next('/')
     }
     else{
-        next('/dashboard')
+        next()
     }
-    next()
 })
 
 const app = new Vue({

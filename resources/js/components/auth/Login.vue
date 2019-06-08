@@ -39,6 +39,12 @@
             }
         },
         methods: {
+
+            logout() {
+                this.$store.commit('logout')
+                this.$router.push('/login')
+            },
+
             authenticate() {
                 this.$store.dispatch('login')
                 login(this.form)
