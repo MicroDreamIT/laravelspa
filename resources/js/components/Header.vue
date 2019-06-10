@@ -7,14 +7,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <router-link :to="{name:'login'}" class="nav-link" v-if="!currentUser">
-                        login
-                    </router-link>
-                    <a href="#" @click.prevent="logout" class="nav-link" v-else>
-                        logout
-                    </a>
-                </li>
+                <template v-if="!currentUser">
+                    <li class="nav-item active">
+                        <router-link :to="{name:'login'}" class="nav-link">
+                            login
+                        </router-link>
+                    </li>
+                </template>
+                <template v-else>
+                    <li>
+                        <router-link :to="{name:'dashboard'}" class="nav-link">dashboard</router-link>
+                    </li>
+                    <li>
+                        <a href="#" @click.prevent="logout" class="nav-link" v-if="currentUser">
+                            logout
+                        </a>
+                    </li>
+                </template>
             </ul>
         </div>
     </nav>
