@@ -35,8 +35,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all(), auth()->user());
-        Post::create($request->all());
+        auth()->user()->posts()->create($request->all());
         return view('create');
     }
 
