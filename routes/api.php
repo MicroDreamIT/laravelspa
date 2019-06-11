@@ -10,4 +10,4 @@ Route::group(['prefix' => 'auth'], function ($router) {
     Route::post('me', 'AuthController@me');
 });
 
-Route::middleware('jwt')->post('post', 'PostController@store');
+Route::post('post', 'PostController@store');
